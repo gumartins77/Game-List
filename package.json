@@ -1,0 +1,25 @@
+{
+  "name": "projeto-03-m02",
+  "version": "1.0.0",
+  "description": "Projeto de um Catálogo para nota final do Módulo 2 da BlueTech",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gumartins77/Projeto-03-M02.git"
+  },
+  "author": "Gustavo Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gumartins77/Projeto-03-M02/issues"
+  },
+  "homepage": "https://github.com/gumartins77/Projeto-03-M02#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

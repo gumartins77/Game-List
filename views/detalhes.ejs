@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Catálogo de Jogos</title>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><img src="https://www.pngplay.com/wp-content/uploads/6/Game-Over-Yellow-Transparent-PNG.png" alt="Logo" /></li>
+        <li>
+          <a href="/">
+            <h1>Catálogo de Jogos</h1>
+          </a>
+        </li>
+        <li><a href="/cadastro#cadastro">Cadastro</a></li>
+        <li><a href="/#cards">Jogos</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <img src="https://www.itl.cat/pngfile/big/129-1296783_http-gears-of-war-3-cover.jpg" alt="banner">
+    </header>
+
+    <main>
+      <section id="cards">
+        <h2>Mais detalhes de <%= jogo.nome %></h2>
+
+        <div class="detalhes">
+          <div class="jogo">
+            <h3><%= jogo.nome %></h3>
+            <img src="<%= jogo.imagem %>" alt="" />
+            <a id="editar" href="/atualizar/<%= jogo.id %>">Editar</a>
+            <a id="apagar" href="/delete/<%= jogo.id %>">Apagar</a>
+          </div>
+          <div class="descricao">
+            <p>Descrição: <%= jogo.descricao %></p>
+            <p>Genero: <%= jogo.genero %></p>
+            <p>Plataforma: <%= jogo.plataforma %></p>
+            <p>Data de Lançamento: <%= jogo.lancamento %></p>
+            <p>Nota no Metacritic: <%= jogo.nota %></p>
+            <p>Publisher: <%= jogo.estudio %></p>
+            <p>Estudio desenvolvedor: <%= jogo.desenvolvedor %></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Para cada estilo de gamer, há um jogo esperando para te fazer feliz
+      </p>
+      <p>
+        Todos os direitos resevados para
+        <a target="_blank" href="https://www.linkedin.com/in/gustavo-martins-681921229/">Gustavo Martins</a>
+        &copy;
+      </p>
+    </footer>
+  </body>
+</html>
