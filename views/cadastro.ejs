@@ -36,6 +36,8 @@
             <img src="https://wallpaperaccess.com/full/1457170.jpg" alt="foto de cadastro">
 
             <div>
+
+                <% if (jogo == undefined) { %> 
                     <h2>Cadastre um novo jogo!</h2>
 
                     <form action="/create" method="POST">
@@ -70,6 +72,44 @@
                         <button id="btnCadastrar" type="submit">Cadastrar</button>
 
                     </form>
+
+                    <% } else { %> 
+                        <h2>Atualize o jogo!</h2>
+
+                    <form action="/atualizar" method="GET">
+
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" value="<% jogo.nome %>">
+
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao" value="<% jogo.descricao %>">
+
+                        <label for="tipo">Genero:</label>
+                        <input type="text" id="genero" name="genero" value="<% jogo.genero %>">
+
+                        <label for="tipo">Plataforma:</label>
+                        <input type="text" id="plataforma" name="plataforma" value="<% jogo.plataforma %>">
+
+                        <label for="tipo">Data de lançamento:</label>
+                        <input type="text" id="lancamento" name="lancamento" value="<% jogo.lancamento %>">
+
+                        <label for="tipo">Nota no Metacritic:</label>
+                        <input type="text" id="nota" name="nota" value="<% jogo.nota %>">
+
+                        <label for="tipo">Estudio desenvolvedor:</label>
+                        <input type="text" id="desenvolvedor" name="desenvolvedor" value="<% jogo.desenvolvedor %>">
+
+                        <label for="tipo">Publisher:</label>
+                        <input type="text" id="estudio" name="estudio" value="<% jogo.estudio %>">
+
+                        <label for="imagem">Link da Imagem</label>
+                        <input type="text" id="imagem" name="imagem" value="<% jogo.imagem %>">
+
+                        <button id="btnCadastrar" type="submit">Atualizar</button>
+
+                    </form>
+
+                    <% } %>
 
         </section>
 

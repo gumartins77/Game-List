@@ -84,7 +84,7 @@ app.post("/create", (req, res) => {
 app.get("/atualizar/:id", (req, res) => {
   const id = +req.params.id;
   jogo = jogos.find((jogo) => jogo.id === id);
-  res.redirect("/atualizar");
+  res.redirect("/cadastro");
 });
 
 app.post("/update/:id", (req, res) => {
