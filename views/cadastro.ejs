@@ -2,32 +2,16 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Catálogo de Jogos</title>
+    <%- include('./components/head') %> 
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><img src="https://www.pngplay.com/wp-content/uploads/6/Game-Over-Yellow-Transparent-PNG.png" alt="Logo"></li>
-            <li>
-                <a href="/">
-                    <h1>Catálogo de Jogos</h1>
-                </a>
-            </li>
-            <li><a href="/cadastro#cadastro">Cadastro</a></li>
-            <li><a href="/#cards">Jogos</a></li>
-        </ul>
-    </nav>
+    <%- include('./components/nav') %> 
 
     <header>
         <img src="https://i.pinimg.com/originals/71/f8/73/71f8736c3628d4661156b62a4d68781f.jpg" alt="banner">
     </header>
-
 
     <main>
 
@@ -36,8 +20,6 @@
             <img src="https://wallpaperaccess.com/full/1457170.jpg" alt="foto de cadastro">
 
             <div>
-
-                <% if (jogo == undefined) { %> 
                     <h2>Cadastre um novo jogo!</h2>
 
                     <form action="/create" method="POST">
@@ -45,11 +27,11 @@
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome">
 
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" name="descricao">
-
                         <label for="tipo">Genero:</label>
                         <input type="text" id="genero" name="genero">
+
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao">
 
                         <label for="tipo">Plataforma:</label>
                         <input type="text" id="plataforma" name="plataforma">
@@ -57,13 +39,7 @@
                         <label for="tipo">Data de lançamento:</label>
                         <input type="text" id="lancamento" name="lancamento">
 
-                        <label for="tipo">Nota no Metacritic:</label>
-                        <input type="text" id="nota" name="nota">
-
-                        <label for="tipo">Estudio desenvolvedor:</label>
-                        <input type="text" id="desenvolvedor" name="desenvolvedor">
-
-                        <label for="tipo">Publisher:</label>
+                        <label for="tipo">Estudio:</label>
                         <input type="text" id="estudio" name="estudio">
 
                         <label for="imagem">Link da Imagem</label>
@@ -73,58 +49,11 @@
 
                     </form>
 
-                    <% } else { %> 
-                        <h2>Atualize o jogo!</h2>
-
-                    <form action="/atualizar" method="GET">
-
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="<% jogo.nome %>">
-
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" name="descricao" value="<% jogo.descricao %>">
-
-                        <label for="tipo">Genero:</label>
-                        <input type="text" id="genero" name="genero" value="<% jogo.genero %>">
-
-                        <label for="tipo">Plataforma:</label>
-                        <input type="text" id="plataforma" name="plataforma" value="<% jogo.plataforma %>">
-
-                        <label for="tipo">Data de lançamento:</label>
-                        <input type="text" id="lancamento" name="lancamento" value="<% jogo.lancamento %>">
-
-                        <label for="tipo">Nota no Metacritic:</label>
-                        <input type="text" id="nota" name="nota" value="<% jogo.nota %>">
-
-                        <label for="tipo">Estudio desenvolvedor:</label>
-                        <input type="text" id="desenvolvedor" name="desenvolvedor" value="<% jogo.desenvolvedor %>">
-
-                        <label for="tipo">Publisher:</label>
-                        <input type="text" id="estudio" name="estudio" value="<% jogo.estudio %>">
-
-                        <label for="imagem">Link da Imagem</label>
-                        <input type="text" id="imagem" name="imagem" value="<% jogo.imagem %>">
-
-                        <button id="btnCadastrar" type="submit">Atualizar</button>
-
-                    </form>
-
-                    <% } %>
-
         </section>
 
     </main>
 
-    <footer>
-        <p>
-          Para cada estilo de gamer, há um jogo esperando para te fazer feliz
-        </p>
-        <p>
-          Todos os direitos resevados para
-          <a target="_blank" href="https://www.linkedin.com/in/gustavo-martins-681921229/">Gustavo Martins</a>
-          &copy;
-        </p>
-      </footer>
+    <%- include('./components/footer') %> 
 
 </body>
 

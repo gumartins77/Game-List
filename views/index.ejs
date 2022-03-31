@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Catálogo de Jogos</title>
+    <%- include('./components/head') %> 
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><img src="https://www.pngplay.com/wp-content/uploads/6/Game-Over-Yellow-Transparent-PNG.png" alt="Logo" /></li>
-        <li>
-          <a href="/">
-            <h1>Catálogo de Jogos</h1>
-          </a>
-        </li>
-        <li><a href="/cadastro#cadastro">Cadastro</a></li>
-        <li><a href="/#cards">Jogos</a></li>
-      </ul>
-    </nav>
+
+    <%- include('./components/nav') %> 
 
     <header>
       <img src="https://i.pinimg.com/originals/aa/d7/68/aad7688c0e3b1ac517466a3b435848c3.jpg" alt="banner">
@@ -34,7 +20,6 @@
         <div class="card">
           <a href="/detalhes/<%= jogo.id %>/#cards">
             <h3><%= jogo.nome %></h3>
-            <p>ID: <%= jogo.id %></p>
             <img src="<%= jogo.imagem %>" alt="" />
             <h4 class="texto">Saiba mais</h4>
           </a>
@@ -43,15 +28,7 @@
       </section>
     </main>
 
-    <footer>
-      <p>
-        Para cada estilo de gamer, há um jogo esperando para te fazer feliz
-      </p>
-      <p>
-        Todos os direitos resevados para
-        <a target="_blank" href="https://www.linkedin.com/in/gustavo-martins-681921229/">Gustavo Martins</a>
-        &copy;
-      </p>
-    </footer>
+    <%- include('./components/footer') %> 
+
   </body>
 </html>
