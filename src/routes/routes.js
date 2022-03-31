@@ -1,3 +1,6 @@
-const express = require("express");
+const routes = require("express").Router();
+const JogoController = require("../controllers/Jogo.Controller");
 
-const routes = express.Router();
+routes.get("/", JogoController.getAll);
+
+module.exports = routes;
