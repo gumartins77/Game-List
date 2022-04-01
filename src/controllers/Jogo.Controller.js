@@ -1,3 +1,4 @@
+const { send } = require("express/lib/response");
 const res = require("express/lib/response");
 const Jogo = require("../models/Jogo");
 
@@ -9,6 +10,15 @@ const getAll = async (req, res) => {
     res.status(500).send({ err: err.message });
   }
 };
+
+const detalhes = async (req, res) => {
+  try {
+    const jogo = await Jogo.findByPk(req.params.id)
+    res.render("detalhes", {jogo})
+  } catch (err) {
+    res.status(500).send({ err: err.message });
+  }
+}
 
 const cadastro = (req, res) => {
   try {
@@ -73,4 +83,5 @@ module.exports = {
   getById,
   update,
   remove,
+  detalhes,
 };
