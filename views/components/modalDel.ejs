@@ -1,0 +1,21 @@
+<section class="modal-ovarlay" id="ovarlay">
+
+    <div class="modal" id="modal">
+
+        <div class="modal-header">
+            <h3>Remover Jogo</h3>
+            <a href="/" id="modal-close"><i class="bi bi-x"></i></a>
+        </div>
+
+        <div class="modal-body">
+            <p>Tem certeza que deseja excluir o <%= jogoDel.nome %>?</p>
+            <div id="modal-buttons-del">
+                <a href="/" id="n">Não</a>
+                <a href="/remove/<%= jogoDel.id %>" id="s">Sim</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>

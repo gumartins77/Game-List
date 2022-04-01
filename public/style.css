@@ -273,3 +273,132 @@ footer p a{
     color: rgb(42,40,39);
     font-weight: 600;
 }
+
+.modal-ovarlay {
+  background-color: #00000050;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.modal {
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255,205,1);
+  padding: 1rem;
+}
+
+.modal-header a#modal-close {
+  font-size: 1.4rem;
+  color: rgb(42,40,39);
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: .5rem 1rem;
+  display: flex;
+  flex: 1;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-form input {
+  width: 100%;
+  padding: .5rem;
+  font-size: .8rem;
+  outline: none;
+  border: solid 2px #ccc;
+}
+
+.modal-form label {
+  color: rgb(42,40,39);
+  padding: .5rem;
+}
+
+.modal-form button {
+  padding: .6rem;
+  border-radius: 1.5rem;
+  background-color: rgb(255,205,1);
+  border: solid 1.5px rgb(42,40,39);
+  color: rgb(42,40,39);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-form button:hover {
+  background-color: rgb(42,40,39);
+  border: solid 1.5px rgb(255,205,1);
+  color: rgb(255,205,1);
+}
+
+.modal-body p {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+div#modal-buttons-del {
+  display: flex;
+  margin: 0 auto;
+}
+
+div#modal-buttons-del a {
+  text-decoration: none;
+  padding: .7rem;
+  width: 100%;
+  margin: 2rem 1rem 1rem;
+  border-radius: 1.2rem;
+  font-size: 1.1rem;
+}
+
+div#modal-buttons-del a#n {
+  color: #ff0000;
+  border: solid 2px #ff0000;
+  transition: all .3s ease-in-out;
+}
+
+div#modal-buttons-del a#n:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+div#modal-buttons-del a#s {
+  color: rgb(5, 1, 255);
+  border: solid 2px rgb(5, 1, 255);
+  transition: all .3s ease-in-out;
+}
+
+div#modal-buttons-del a#s:hover {
+  background-color: rgb(5, 1, 255);
+  color: #fff;
+}

@@ -1,0 +1,41 @@
+<section class="modal-ovarlay" id="ovarlay">
+
+    <div class="modal" id="modal">
+
+        <div class="modal-header">
+            <h3>Atualizar Jogo</h3>
+            <a href="/" id="modal-close"><i class="bi bi-x"></i></a>
+        </div>
+
+        <div class="modal-body">
+            <form class="modal-form" action="/update/<%= jogoPut.id %>" method="POST">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="<%= jogoPut.nome %>">
+
+                <label for="tipo">Genero:</label>
+                <input type="text" id="genero" name="genero" value="<%= jogoPut.genero %>">
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" value="<%= jogoPut.descricao %>">
+
+                <label for="tipo">Plataforma:</label>
+                <input type="text" id="plataforma" name="plataforma" value="<%= jogoPut.plataforma %>">
+
+                <label for="tipo">Data de lançamento:</label>
+                <input type="text" id="lancamento" name="lancamento" value="<%= jogoPut.lancamento %>">
+
+                <label for="tipo">Estudio:</label>
+                <input type="text" id="estudio" name="estudio" value="<%= jogoPut.estudio %>">
+
+                <label for="imagem">Link da Imagem</label>
+                <input type="text" id="imagem" name="imagem" value="<%= jogoPut.imagem %>">
+
+                <button id="btnCadastrar" type="submit">Atualizar</button>
+
+            </form>
+        </div>
+
+    </div>
+
+</section>

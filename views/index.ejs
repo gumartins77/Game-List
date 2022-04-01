@@ -23,10 +23,20 @@
             <img src="<%= jogo.imagem %>" alt="" />
             <h4 class="texto">Saiba mais</h4>
           </a>
+          <a id="editar" href="/getById/<%= jogo.id %>/put">Editar</a>
+          <a id="apagar" href="/getById/<%= jogo.id %>/delete">Apagar</a>
         </div>
         <% }) %>
       </section>
     </main>
+
+    <% if (jogoPut != null) { %> 
+    <%- include('./components/modalPut') %> 
+    <% } %>
+
+    <% if (jogoDel != null) { %> 
+      <%- include('./components/modalDel') %> 
+      <% } %>
 
     <%- include('./components/footer') %> 
 
