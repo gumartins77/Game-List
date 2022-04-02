@@ -14,12 +14,14 @@
     </header>
 
     <main>
-
         <section id="cadastro">
 
             <img src="https://wallpaperaccess.com/full/1457170.jpg" alt="foto de cadastro">
 
             <div>
+                <% if (mensagem != "") { %> 
+                    <%- include('./components/alerts') %> 
+                 <% } %> 
                     <h2>Cadastre um novo jogo!</h2>
 
                     <form action="/create" method="POST">
@@ -54,6 +56,8 @@
     </main>
 
     <%- include('./components/footer') %> 
+
+    <script src="/script.js"></script>
 
 </body>
 

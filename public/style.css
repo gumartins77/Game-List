@@ -1,10 +1,16 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: Roboto, Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -28,29 +34,31 @@ nav ul li {
   padding: 0.6rem;
 }
 
-nav ul li h1:hover {
-  transition: all 0.4s ease-out;
-  color: rgb(255,205,1);
-}
-
-nav ul li a:hover {
-  transition: all 0.4s ease-out;
-  color: rgb(255,205,1);
-}
-
 nav img {
   width: 5rem;
 }
 
 nav h1 {
-  color: #fff;
+  color: rgb(255,205,1);
   font-size: 1.4rem;
+}
+
+nav ul li h1:hover {
+  transition: all 0.4s ease-out;
+  color: rgb(255,205,1);
+  animation: neon2 3s alternate infinite ease-in-out;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: rgb(255,205,1);
   font-size: 1.3rem;
+}
+
+nav ul li a:hover {
+  transition: all 0.4s ease-out;
+  color: rgb(255,205,1);
+  animation: neon2 3s alternate infinite ease-in-out;
 }
 
 header img {
@@ -72,7 +80,7 @@ section#cards {
 }
 
 section#cards div.card {
-  width: 20rem;
+  width: 22%;
   box-shadow: 5px 5px 5px 5px #00000015;
   padding: 1rem;
   margin: 3rem 0 5rem 0;
@@ -101,13 +109,20 @@ section#cards div.card:hover img{
 section#cards div.card:hover {
   transition: all 0.4s ease-out;
   transform: scale(1.1);
-  /* filter: blur(1px); */
-  /* filter: grayscale(100%); */
+  animation: neon2 3s alternate infinite ease-in-out;
 }
 
 section#cards div.card a {
   text-decoration: none;
   color: rgb(255,205,1);
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 section#cards h2 {
@@ -116,6 +131,43 @@ section#cards h2 {
   color: rgb(255,205,1);
   font-size: 3rem;
   padding: 2rem;
+  /* font-family: neon; */
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    filter: drop-shadow(0 0 0 #ffbe0B);
+  } to {
+    filter: drop-shadow(0 0 30px #ffbe0B);
+  }
+}
+
+section#cards div.titulo h2 {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+  font-family: neon;
+}
+
+.tituloDetalhes {
+  animation: neon2 3s alternate infinite ease-in-out;
+}
+
+.joystick {
+  width: 10%;
+  animation: neon2 3s alternate infinite ease-in-out;
 }
 
 section#cards div.card img {
@@ -124,6 +176,18 @@ section#cards div.card img {
 
 section#cards div.card h3 {
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+div.jogo h3 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 section#cards div.detalhes {
@@ -137,59 +201,16 @@ section#cards div.detalhes {
 
 section#cards div.descricao {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: .7rem;
   padding: 1rem;
   margin-left: 2rem;
-  line-height: 1.5rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
 }
 
 section#cards div.descricao p {
   margin-bottom: 1rem;
 }
-
-section#cards div.jogo a#editar {
-  width: 100%;
-  border-radius: 1rem;
-  padding: 0.6rem;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  font-size: 1rem;
-  background-color: #fff;
-  border: solid 1px rgb(255,205,1);
-  color: rgb(255,205,1);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  margin-top: 2rem;
-}
-
-section#cards div.jogo a#apagar {
-    width: 100%;
-    border-radius: 1rem;
-    padding: 0.6rem;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 1rem;
-    background-color: #fff;
-    border: solid 1px #ff0000;
-    color: #ff0000;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-    margin-top: 1rem;
-  }
-
-section#cards div.jogo a#editar:hover {
-  background-color: rgb(255,205,1);
-  color: #fff;
-}
-
-section#cards div.jogo a#apagar:hover {
-    background-color: #ff0000;
-    color: #fff;
-  }
 
 section#cadastro {
   display: flex;
@@ -210,6 +231,7 @@ section#cadastro h2 {
   text-align: center;
   padding-bottom: 5rem;
   color: rgb(255,205,1);
+  animation: neon2 3s alternate infinite ease-in-out;
 }
 
 section#cadastro form {
@@ -401,4 +423,32 @@ div#modal-buttons-del a#s {
 div#modal-buttons-del a#s:hover {
   background-color: rgb(5, 1, 255);
   color: #fff;
+}
+
+.mensagem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem;
+  top: 7rem;
+  right: 2rem;
+  z-index: 99999;
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-radius: 1.1rem;
+}
+
+.mensagem-erro {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.mensagem-sucesso {
+  background-color:rgb(5, 1, 255);
+  color: #fff;
+}
+
+.mensagem i {
+  cursor: pointer;
+  font-size: 1.4rem;
 }

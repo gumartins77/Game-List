@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <%- include('./components/head') %> 
+    <%- include('./components/head') %>
   </head>
 
   <body>
-
-    <%- include('./components/nav') %> 
+    <%- include('./components/nav') %>
 
     <header>
-      <img src="https://i.pinimg.com/originals/aa/d7/68/aad7688c0e3b1ac517466a3b435848c3.jpg" alt="banner">
+      <img
+        src="https://i.pinimg.com/originals/aa/d7/68/aad7688c0e3b1ac517466a3b435848c3.jpg"
+        alt="banner"/>
     </header>
 
     <main>
+
       <section id="cards">
-        <h2>Lista de Jogos</h2>
+
+        <% if (mensagem != "") { %> 
+          <%- include('./components/alerts') %> 
+        <% } %>
+
+        <div class="titulo">
+        <h2>Lista de Jogos <img class="joystick" src="/img/joystick2.png" alt="joystick"></h2>
+        </div>
 
         <% jogos.forEach((jogo)=> { %>
         <div class="card">
@@ -30,15 +39,10 @@
       </section>
     </main>
 
-    <% if (jogoPut != null) { %> 
-    <%- include('./components/modalPut') %> 
-    <% } %>
+    <% if (jogoPut != null) { %> <%- include('./components/modalPut') %> <% } %>
+    <% if (jogoDel != null) { %> <%- include('./components/modalDel') %> <% } %>
+    <%- include('./components/footer') %>
 
-    <% if (jogoDel != null) { %> 
-      <%- include('./components/modalDel') %> 
-      <% } %>
-
-    <%- include('./components/footer') %> 
-
+    <script src="/script.js"></script>
   </body>
 </html>
