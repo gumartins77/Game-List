@@ -1,0 +1,13 @@
+<div class="card">
+    <a id="editar" href="/getById/<%= jogo.id %>/put"
+      ><i class="bi bi-pencil-fill"></i
+    ></a>
+    <a id="apagar" href="/getById/<%= jogo.id %>/delete"
+      ><i class="bi bi-trash"></i
+    ></a>
+    <a href="/detalhes/<%= jogo.id %>/#cards">
+      <h3><%= jogo.nome %></h3>
+      <img src="<%= jogo.imagem %>" alt="" />
+      <h4 class="texto">Saiba mais</h4>
+    </a>
+  </div>

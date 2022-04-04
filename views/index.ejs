@@ -16,8 +16,10 @@
 
     <main>
       <section id="cards">
-        <% if (mensagem != "") { %> <%- include('./components/alerts') %> <% }
-        %> <% if (jogoProcurar.length == 0) { %>
+        <% if (mensagem != "") { %> 
+        <%- include('./components/alerts') %> 
+        <% } %> 
+        <% if (jogoProcurar.length == 0) { %>
         <div class="titulo">
           <h2>
             Lista de Jogos
@@ -31,41 +33,17 @@
             <img class="joystick" src="/img/joystick2.png" alt="joystick" />
           </h2>
         </div>
-        <% } %> <% jogos.forEach((jogo)=> { %>
-        <div class="card">
-          <a id="editar" href="/getById/<%= jogo.id %>/put"
-            ><i class="bi bi-pencil-fill"></i
-          ></a>
-          <a id="apagar" href="/getById/<%= jogo.id %>/delete"
-            ><i class="bi bi-trash"></i
-          ></a>
-          <a href="/detalhes/<%= jogo.id %>/#cards">
-            <h3><%= jogo.nome %></h3>
-            <img src="<%= jogo.imagem %>" alt="" />
-            <h4 class="texto">Saiba mais</h4>
-          </a>
-        </div>
+        <% } %> 
+        <% if (jogoProcurar.length == 0) { %>
+        <% jogos.forEach((jogo)=> { %>
+        <%- include ('./components/cards' , {jogo: jogo}) %> 
         <% }) %>
       </section>
 
       <section id="cards">
-        %> <% if (jogoProcurar.length != 0) { %> <%
-        jogoProcurar.forEach((jogo)=> { %>
-        <div class="card">
-          <span class="buttonsED">
-            <a id="editar" href="/getById/<%= jogo.id %>/put"
-              ><i class="bi bi-pencil-fill"></i
-            ></a>
-            <a id="apagar" href="/getById/<%= jogo.id %>/delete"
-              ><i class="bi bi-trash"></i
-            ></a>
-          </span>
-          <a href="/detalhes/<%= jogo.id %>/#cards">
-            <h3><%= jogo.nome %></h3>
-            <img src="<%= jogo.imagem %>" alt="" />
-            <h4 class="texto">Saiba mais</h4>
-          </a>
-        </div>
+        <% } else { %> 
+        <%jogoProcurar.forEach((jogo)=> { %>
+        <%- include ('./components/cards' , {jogo: jogo}) %> 
         <% }) %>
       </section>
       <% } %>
@@ -73,6 +51,8 @@
 
     <% if (jogoPut != null) { %> <%- include('./components/modalPut') %> <% } %>
     <% if (jogoDel != null) { %> <%- include('./components/modalDel') %> <% } %>
+    <div class="topo"></div>
+    <div class="base"></div>
     <%- include('./components/footer') %>
 
     <script src="/script.js"></script>
