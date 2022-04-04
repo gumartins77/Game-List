@@ -177,7 +177,7 @@ a#editar i:hover {
 }
 
 section#cards div.card {
-  width: 22%;
+  width: 16rem;
   box-shadow: 5px 5px 5px 5px #00000015;
   padding: 1rem;
   margin: 2rem 0 1rem 0;
