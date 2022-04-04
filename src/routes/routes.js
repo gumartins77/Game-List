@@ -8,5 +8,6 @@ routes.post("/create", JogoController.create);
 routes.get("/getById/:id/:method", JogoController.getById);
 routes.post("/update/:id", JogoController.update);
 routes.get("/remove/:id", JogoController.remove);
+routes.post("/pesquisa", JogoController.pesquisa);
 
 module.exports = routes;

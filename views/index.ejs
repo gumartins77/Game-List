@@ -5,38 +5,70 @@
   </head>
 
   <body>
-    <%- include('./components/nav') %>
-
+    <%- include('./components/nav') %> <% if (jogoProcurar.length == 0) { %>
     <header>
       <img
         src="https://i.pinimg.com/originals/aa/d7/68/aad7688c0e3b1ac517466a3b435848c3.jpg"
-        alt="banner"/>
+        alt="banner"
+      />
     </header>
+    <% } %>
 
     <main>
-
       <section id="cards">
-
-        <% if (mensagem != "") { %> 
-          <%- include('./components/alerts') %> 
-        <% } %>
-
+        <% if (mensagem != "") { %> <%- include('./components/alerts') %> <% }
+        %> <% if (jogoProcurar.length == 0) { %>
         <div class="titulo">
-        <h2>Lista de Jogos <img class="joystick" src="/img/joystick2.png" alt="joystick"></h2>
+          <h2>
+            Lista de Jogos
+            <img class="joystick" src="/img/joystick2.png" alt="joystick" />
+          </h2>
         </div>
-
-        <% jogos.forEach((jogo)=> { %>
+        <% } else { %>
+        <div class="titulo">
+          <h2>
+            Resultado da Pesquisa
+            <img class="joystick" src="/img/joystick2.png" alt="joystick" />
+          </h2>
+        </div>
+        <% } %> <% jogos.forEach((jogo)=> { %>
         <div class="card">
+          <a id="editar" href="/getById/<%= jogo.id %>/put"
+            ><i class="bi bi-pencil-fill"></i
+          ></a>
+          <a id="apagar" href="/getById/<%= jogo.id %>/delete"
+            ><i class="bi bi-trash"></i
+          ></a>
           <a href="/detalhes/<%= jogo.id %>/#cards">
             <h3><%= jogo.nome %></h3>
             <img src="<%= jogo.imagem %>" alt="" />
             <h4 class="texto">Saiba mais</h4>
           </a>
-          <a id="editar" href="/getById/<%= jogo.id %>/put">Editar</a>
-          <a id="apagar" href="/getById/<%= jogo.id %>/delete">Apagar</a>
         </div>
         <% }) %>
       </section>
+
+      <section id="cards">
+        %> <% if (jogoProcurar.length != 0) { %> <%
+        jogoProcurar.forEach((jogo)=> { %>
+        <div class="card">
+          <span class="buttonsED">
+            <a id="editar" href="/getById/<%= jogo.id %>/put"
+              ><i class="bi bi-pencil-fill"></i
+            ></a>
+            <a id="apagar" href="/getById/<%= jogo.id %>/delete"
+              ><i class="bi bi-trash"></i
+            ></a>
+          </span>
+          <a href="/detalhes/<%= jogo.id %>/#cards">
+            <h3><%= jogo.nome %></h3>
+            <img src="<%= jogo.imagem %>" alt="" />
+            <h4 class="texto">Saiba mais</h4>
+          </a>
+        </div>
+        <% }) %>
+      </section>
+      <% } %>
     </main>
 
     <% if (jogoPut != null) { %> <%- include('./components/modalPut') %> <% } %>

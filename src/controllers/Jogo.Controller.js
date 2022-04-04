@@ -1,16 +1,17 @@
 const { send } = require("express/lib/response");
 const res = require("express/lib/response");
 const Jogo = require("../models/Jogo");
-const order = { order: [["id", "ASC"]] };
+const order = { order: [["nome", "ASC"]] };
+const Op = require("sequelize").Op;
 let mensagem = "";
 let tipo = "";
 
 const getAll = async (req, res) => {
   try {
     setTimeout(() => {
-      mensagem = ""
-      tipo = ""
-    }, 1000)
+      mensagem = "";
+      tipo = "";
+    }, 1000);
     const jogos = await Jogo.findAll(order);
     res.render("index", {
       jogos,
@@ -18,6 +19,7 @@ const getAll = async (req, res) => {
       jogoDel: null,
       mensagem,
       tipo,
+      jogoProcurar: [],
     });
   } catch (err) {
     res.status(500).send({ err: err.message });
@@ -44,8 +46,17 @@ const cadastro = (req, res) => {
 const create = async (req, res) => {
   try {
     const jogo = req.body;
-    if (!jogo.nome || !jogo.genero || !jogo.descricao || !jogo.plataforma || !jogo.lancamento || !jogo.estudio || !jogo.imagem) {
-      mensagem = "Você precisa preencher todos os campos para concluir o cadastro!";
+    if (
+      !jogo.nome ||
+      !jogo.genero ||
+      !jogo.descricao ||
+      !jogo.plataforma ||
+      !jogo.lancamento ||
+      !jogo.estudio ||
+      !jogo.imagem
+    ) {
+      mensagem =
+        "Você precisa preencher todos os campos para concluir o cadastro!";
       tipo = "erro";
       return res.redirect("/cadastro#cadastro");
     }
@@ -65,9 +76,23 @@ const getById = async (req, res) => {
     const jogo = await Jogo.findByPk(req.params.id);
 
     if (method == "put") {
-      res.render("index", { jogos, jogoPut: jogo, jogoDel: null, mensagem, tipo });
+      res.render("index", {
+        jogos,
+        jogoPut: jogo,
+        jogoDel: null,
+        mensagem,
+        tipo,
+        jogoProcurar: [],
+      });
     } else {
-      res.render("index", { jogos, jogoPut: null, jogoDel: jogo, mensagem, tipo });
+      res.render("index", {
+        jogos,
+        jogoPut: null,
+        jogoDel: jogo,
+        mensagem,
+        tipo,
+        jogoProcurar: [],
+      });
     }
   } catch (err) {
     res.status(500).send({ err: err.message });
@@ -97,6 +122,35 @@ const remove = async (req, res) => {
   }
 };
 
+const pesquisa = async (req, res) => {
+  try {
+    const jogo = await Jogo.findAll({
+      where: {
+        nome: {
+          [Op.like]: `%${req.body.jogo}%`,
+        },
+      },
+      order: [["nome", "ASC"]],
+    });
+
+    if (jogo.length == 0) {
+      mensagem = "Jogo não encontrado!";
+      tipo = "erro";
+      return res.redirect("/#cards");
+    }
+    res.render("index", {
+      jogos: [],
+      jogoPut: null,
+      jogoDel: null,
+      mensagem,
+      tipo,
+      jogoProcurar: jogo
+    });
+  } catch (err) {
+    res.status(500).send({ err: err.message });
+  }
+};
+
 module.exports = {
   getAll,
   cadastro,
@@ -105,4 +159,5 @@ module.exports = {
   update,
   remove,
   detalhes,
+  pesquisa,
 };
