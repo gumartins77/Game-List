@@ -115,6 +115,12 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
+@media (max-width: 510px) {
+  nav img {
+    display: none;
+  }
+}
+
 @media (max-width: 1088px) {
   body {
     overflow-x: hidden;
