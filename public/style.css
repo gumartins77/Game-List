@@ -48,7 +48,7 @@ nav img {
 
 nav h1 {
   color: rgb(255, 205, 1);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Press Start 2P", cursive;
 }
 
@@ -62,7 +62,7 @@ nav ul li h1:hover {
 nav ul li a {
   text-decoration: none;
   color: rgb(255, 205, 1);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Press Start 2P", cursive;
 }
 
@@ -73,15 +73,15 @@ nav ul li a:hover {
 }
 
 .pesquisa {
-  padding-right: 2rem;
+  padding-right: .7rem;
 }
 
 .pesquisa input {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: .8rem;
   outline: none;
   border-radius: 0.7rem;
-  width: 15rem;
+  width: 13rem;
   border: solid 1px rgb(255, 205, 1);
   font-family: "Press Start 2P", cursive;
 }
@@ -89,7 +89,7 @@ nav ul li a:hover {
 .pesquisa button {
   padding: 0.5rem;
   border: solid 1px rgb(255, 205, 1);
-  font-size: 1rem;
+  font-size: .8rem;
   background-color: rgb(255, 205, 1);
   color: rgb(42, 40, 39);
   border-radius: 0.7rem;
