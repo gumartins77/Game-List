@@ -475,15 +475,14 @@ section#cadastro form button {
   margin: 0 auto;
   font-size: 1rem;
   background-color: #fff;
-  border: solid 1px rgb(255, 205, 1);
-  color: rgb(255, 205, 1);
+  border: solid 1px rgb(42, 40, 39);
+  color: rgb(42, 40, 39);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 section#cadastro form button:hover {
   background-color: rgb(255, 205, 1);
-  color: #fff;
 }
 
 @media (max-width: 1360px) {
