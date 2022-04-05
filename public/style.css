@@ -469,7 +469,7 @@ section#cadastro form button:hover {
   }
 
   section#cadastro form button {
-    /* font-size: x-small; */
+    font-size: x-small;
     margin: auto;
     }
 
