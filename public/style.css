@@ -481,6 +481,8 @@ section#cadastro form button:hover {
   section#cadastro img {
     width: auto;
     margin: auto;
+    width: 50vw;
+    height: 70vh;
   }
 
   .pesquisa {
