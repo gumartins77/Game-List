@@ -142,6 +142,9 @@ header img {
 
 main {
   margin: 0 10rem 0 10rem;
+  min-width: 320px;
+  max-width: 1254px;
+  margin: auto;
 }
 
 /* Configuração dos Cards e Main */
