@@ -463,15 +463,15 @@ section#cadastro form button:hover {
 
   section#cadastro form {
     width: 80%;
-    font-size: x-small;
+    /* font-size: x-small; */
     margin: auto;
     margin-left: 0;
   }
 
   section#cadastro form button {
-    font-size: x-small;
+    /* font-size: x-small; */
     margin: auto;
-  }
+    }
 
   section#cadastro h2 {
     font-size: x-large;
@@ -481,6 +481,14 @@ section#cadastro form button:hover {
   section#cadastro img {
     width: auto;
     margin: auto;
+  }
+
+  .pesquisa {
+    width: auto;
+  }
+
+  nav {
+    justify-content: space-evenly;
   }
 }
 
