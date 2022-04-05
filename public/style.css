@@ -393,6 +393,32 @@ section#cards div.descricao p {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 1360px) {
+  section#cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section#cards img {
+    width: 30vw;
+  }
+
+  section#cards div.detalhes h3 {
+    font-size: x-small;
+  }
+
+  section#cards div.descricao {
+    font-size: x-small;
+    margin: auto;
+    padding-top: 1.8rem;
+    line-height: normal;
+  }
+
+  section#cards h2 {
+    font-size: 4vw;
+  }
+}
+
 /* ---------- */
 
 /* Configuração do Cadastro */
@@ -481,7 +507,7 @@ section#cadastro form button:hover {
   section#cadastro img {
     width: auto;
     margin: auto;
-    width: 50vw;
+    width: 60vw;
     height: 70vh;
   }
 
@@ -492,6 +518,7 @@ section#cadastro form button:hover {
   nav {
     justify-content: space-evenly;
   }
+
 }
 
 /* ---------- */
