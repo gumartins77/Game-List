@@ -27,6 +27,9 @@ nav {
   position: fixed;
   z-index: 9999;
   width: 100%;
+  max-width: 1536px;
+  min-width: 320px;
+  margin: auto;
 }
 
 nav ul {
