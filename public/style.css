@@ -414,9 +414,13 @@ section#cards div.descricao p {
     line-height: normal;
   }
 
-  /* section#cards h2 {
-    font-size: 4vw;
-  } */
+  section#cards h2 {
+    font-size: 6vw;
+  }
+
+  section#cards div.titulo img {
+    width: 8vw;
+  }
 }
 
 /* ---------- */
