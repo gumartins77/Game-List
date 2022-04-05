@@ -393,7 +393,7 @@ section#cards div.descricao p {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 800px) {
   section#cards {
     display: flex;
     flex-wrap: wrap;
@@ -485,7 +485,7 @@ section#cadastro form button:hover {
   background-color: rgb(255, 205, 1);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1360px) {
   section#cadastro {
     flex-wrap: wrap;
   }
