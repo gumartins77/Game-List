@@ -1,4 +1,4 @@
-# Catálogo de Jogos <img class="joystick" src="/img/joystick2.png" alt="joystick" />
+# Catálogo de Jogos
 
 ## Projeto final do 2° Módulo do curso de Desenvolvimento Web da Blue EdTech.
 ## Tema e Objetivo: 
