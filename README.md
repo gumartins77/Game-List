@@ -7,8 +7,10 @@
 
 ## Stacks Usadas: 
 <p> 
-JavaScript; HTML5; CSS3; Node.JS; Express; EJS; Postgresql; Nodemon e MVC.
+JavaScript; HTML5; CSS3; Node.JS; Express; EJS; Postgresql; Sequelize; Nodemon; MVC; Git e GitHub.
 </p>
+
+### Deploy no Heroku: <a href = "https://catalogo-de-games.herokuapp.com"> Catálogo de Games</a>
 
 ### Personal: Gustavo Martins
 
