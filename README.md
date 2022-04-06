@@ -9,8 +9,8 @@
 JavaScript; HTML5; CSS3; Node.JS; Express; EJS; Postgresql; Nodemon e MVC.
 </p>
 
-## Personal: <p>Gustavo Martins </p>
+### Personal: Gustavo Martins
 
-## Email de contato: <p> <a href = "mailto:gugumartin77@gmail.com"> gugumartin77@gmail.com</a></p>
+### Email de contato: <a href = "mailto:gugumartin77@gmail.com"> gugumartin77@gmail.com</a>
 
-## Linkdin: <p><a>gustavomartins.linkdin</a></p>
+### Linkdin: <a>gustavomartins.linkdin</a>
