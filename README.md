@@ -16,4 +16,4 @@ JavaScript; HTML5; CSS3; Node.JS; Express; EJS; Postgresql; Sequelize; Nodemon; 
 
 ### Email de contato: <a href = "mailto:gugumartin77@gmail.com"> gugumartin77@gmail.com</a>
 
-### Linkdin: <a>gustavomartins.linkdin</a>
+### Linkdin: <a href = "https://www.linkedin.com/in/gustavo-martins-681921229/">gustavomartins.linkdin</a>
